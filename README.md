@@ -1,8 +1,11 @@
-# FreeNOS-Project
+# FreeNOS Memory Management System
+test
 
-By: Michael Truong
+# Discussion and Analysis
+test
 
-## Build and Run FreeNOS
-Screencast Software: OBS Studio Version 29.0.2
+# Conclusion
+test
 
-https://youtu.be/mTGEyovIVa4
+# References
+test
