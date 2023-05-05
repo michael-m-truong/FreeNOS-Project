@@ -1,4 +1,4 @@
-# FreeNOS Memory Management System
+# FreeNOS Memory Management System: Michael Truong
 FreeNOS uses a dynamic memory management system based on multiple allocators. It even says in line 196 of Allocator.h. In Kernel.h, the Kernel() function sets up the kernel heap for dynamic memory allocation based on the architecture core. This is evidenced here.
 
 FileDirectory: /kernel/Kernel.h
