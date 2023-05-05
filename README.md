@@ -10,6 +10,7 @@ In Allocator.cpp, the parameters are the range of the requested size and alignme
 
 FileDirectory: /lib/BitAllocator.cpp
 Lines: 41-103
+
 The most important function is the BitAllocator::allocateFrom. This function is responsible for actually allocating memory from the underlying bit array. It takes in a Range argument, which specifies the size and alignment of the requested memory, as well as a startBit argument, which specifies the starting bit position from which to search for free memory.
 
 The function first calculates the number of chunks needed to satisfy the request, and checks the alignment if specified. It then calls the m_array.setNext function to attempt to allocate the requested chunks with the given alignment starting from the startBit position. If the allocation is successful, the function calculates the address of the allocated memory and sets m_lastBit to the last allocated bit position. If the allocation fails, the function returns OutOfMemory.
