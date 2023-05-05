@@ -56,7 +56,7 @@ Lines: 46-74
 
 In the MemoryContext.cpp, it has methods for mapping and unmapping memory ranges, releasing physical memory, finding free virtual memory address, and keeping track of the current memory context. In its constructor, it takes an instance of the MemoryMap class and the SplitAllocator class. It does this because MemoryMap is used to manage virtual memory and SplitAllocator is for physical memory. The mapRangeContigiuous method maps a range of contigious virtual pages to a block of contigious physical pages.  If the physical pages are not provided, the method uses the SplitAllocator to allocate a block of contiguous physical pages. It then maps the virtual pages to the physical pages.The MemoryContext class keeps track of the current memory context using a static m_current member variable. This allows the system to switch between different memory contexts depending on the currently executing process. The unmapRange method unmaps a range of virtual pages, and release method releases a block of physical pages.
 
-<<br/>
+<br/>
 
 FileDirectory: /lib/libarch/Memory.h
 Lines: 33-63
