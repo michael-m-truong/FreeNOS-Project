@@ -3,7 +3,7 @@ FreeNOS uses a dynamic memory management system based on a heap allocator. It ev
 
 <br/>
 
-In Allocator.cpp, the parameters are the range of the requested size and alignment on input. The output contains the actual allowed allocated address. This is reimplemented in PoolAllocator, ButALlocator, SplitAllocator, PageAllocator, and Bubble Allocator.
+In Allocator.cpp, the parameters are the range of the requested size and alignment on input. The output contains the actual allowed allocated address. This is reimplemented in PoolAllocator, BitALlocator, SplitAllocator, PageAllocator, and Bubble Allocator.
 
 <br/>
 
