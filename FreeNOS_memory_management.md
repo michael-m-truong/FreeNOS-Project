@@ -10,30 +10,23 @@ In Allocator.cpp, the parameters are the range of the requested size and alignme
 
 FileDirectory: /lib/BitAllocator.cpp
 Lines: 41-103
-The most important function is the BitAllocator::allocateFrom. This function is responsible for actually allocating memory from the underlying bit array. It takes in a Range argument, which specifies the size and alignment of the requested memory, as well as a startBit argument, which specifies the starting bit position from which to search for free memory.
 
-The function first calculates the number of chunks needed to satisfy the request, and checks the alignment if specified. It then calls the m_array.setNext function to attempt to allocate the requested chunks with the given alignment starting from the startBit position. If the allocation is successful, the function calculates the address of the allocated memory and sets m_lastBit to the last allocated bit position. If the allocation fails, the function returns OutOfMemory.
+The most important function is the BitAllocator::allocateFrom. This function is responsible for actually allocating memory from the underlying bit array. It takes in a Range argument, which specifies the size and alignment of the requested memory, as well as a startBit argument, which specifies the starting bit position from which to search for free memory. The function first calculates the number of chunks needed to satisfy the request, and checks the alignment if specified. It then calls the m_array.setNext function to attempt to allocate the requested chunks with the given alignment starting from the startBit position. If the allocation is successful, the function calculates the address of the allocated memory and sets m_lastBit to the last allocated bit position. If the allocation fails, the function returns OutOfMemory.
 
 FileDirectory: /kernel/BubbleAllocator.cpp
 Lines: 32-45
 
-The most important function is the BubbleAllocator::allocate function. This function is responsible for allocating memory from the given range, which is provided when the BubbleAllocator object is constructed. The function takes in an argument args, which specifies the size and alignment of the requested memory.
-
-The function first calculates the size needed to satisfy the requested memory, based on the alignment requirements. It then checks if there is enough available memory in the range to satisfy the request. If there is, the function calculates the address of the allocated memory and updates the m_allocated counter. If there is not enough memory available, the function returns OutOfMemory.
+The most important function is the BubbleAllocator::allocate function. This function is responsible for allocating memory from the given range, which is provided when the BubbleAllocator object is constructed. The function takes in an argument args, which specifies the size and alignment of the requested memory. The function first calculates the size needed to satisfy the requested memory, based on the alignment requirements. It then checks if there is enough available memory in the range to satisfy the request. If there is, the function calculates the address of the allocated memory and updates the m_allocated counter. If there is not enough memory available, the function returns OutOfMemory.
 
 FileDirectory: /kernel/PoolAllocator.cpp
 Lines: 87-128
 
-The most important function here is the PoolAllocator::allocate function. This function is responsible for allocating memory from the pre-allocated memory pool, which is provided when the PoolAllocator object is constructed. The function takes in an argument size, which specifies the size of the requested memory.
-
-The function first checks if there is enough available memory in the pool to satisfy the request. If there is, the function calculates the address of the allocated memory, updates the m_allocated counter and returns the address. If there is not enough memory available, the function returns nullptr.
+The most important function here is the PoolAllocator::allocate function. This function is responsible for allocating memory from the pre-allocated memory pool, which is provided when the PoolAllocator object is constructed. The function takes in an argument size, which specifies the size of the requested memory. The function first checks if there is enough available memory in the pool to satisfy the request. If there is, the function calculates the address of the allocated memory, updates the m_allocated counter and returns the address. If there is not enough memory available, the function returns nullptr.
 
 FileDirectory: /kernel/SplitAllocator.cpp
 Lines: 69-82
 
-The most important function in this file is the PoolAllocator::allocate function. It first calls m_alloc.allocate(phys) to allocate physical memory from the underlying allocator. If this allocation is successful, it converts the allocated physical address to a virtual address using toVirtual() and populates the virt range with the virtual address, size, and alignment information.
-
-This function is important because it allows the caller to allocate memory in both physical and virtual address spaces simultaneously, which is useful in certain scenarios like memory-mapped I/O.
+The most important function in this file is the PoolAllocator::allocate function. It first calls m_alloc.allocate(phys) to allocate physical memory from the underlying allocator. If this allocation is successful, it converts the allocated physical address to a virtual address using toVirtual() and populates the virt range with the virtual address, size, and alignment information. This function is important because it allows the caller to allocate memory in both physical and virtual address spaces simultaneously, which is useful in certain scenarios like memory-mapped I/O.
 
 <br/>
 
